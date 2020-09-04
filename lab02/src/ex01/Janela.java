@@ -8,7 +8,7 @@ import javax.swing.JFrame;
 
 public class Janela extends JFrame {
 	
-	int n = 0;
+	private int n = 0;
 	
 	public Janela() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
