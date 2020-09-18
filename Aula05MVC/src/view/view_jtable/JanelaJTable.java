@@ -29,9 +29,16 @@ public class JanelaJTable extends JFrame implements View {
 		setLayout(new BorderLayout());
 		
 		dtm = new DefaultTableModel(new Object[] {"id", "nome"}, 0) ;
-		tabela = new JTable(dtm);
+		tabela = new JTable(dtm) {
+			@Override
+			public boolean isCellEditable(int linha, int coluna) {
+				return false;
+			}
+		};
 		JScrollPane tabelaPanel = new JScrollPane(tabela);
 		add(tabelaPanel, BorderLayout.CENTER);
+		
+		tabela.getTableHeader().setReorderingAllowed(false);
 		
 		botaoListar = new JButton("Listar");
 		JPanel botaoPanel = new JPanel();
