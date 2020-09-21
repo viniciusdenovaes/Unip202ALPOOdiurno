@@ -42,10 +42,7 @@ public class Controller {
 			double valor = view.getValorProduto();
 			Produto produto = new Produto(id, nome, valor);
 			
-			Collection<Produto> produtos = model.loadProdutos();
-			produtos.add(produto);
-			
-			model.saveProdutos(produtos);
+			model.saveProduto(produto);
 			
 		}
 		

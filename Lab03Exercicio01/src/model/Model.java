@@ -7,6 +7,6 @@ import entidade.Produto;
 public interface Model {
 	
 	public Collection<Produto> loadProdutos();
-	public void saveProdutos(Collection<Produto> produtos);
+	public void saveProduto(Produto produto);
 
 }

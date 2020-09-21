@@ -1,8 +1,10 @@
 package model;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -51,23 +53,21 @@ public class ModelCSV implements Model {
 	}
 
 	@Override
-	public void saveProdutos(Collection<Produto> produtos) {
+	public void saveProduto(Produto produto) {
 		
-		OutputStream os;
-		OutputStreamWriter osw;
+		FileWriter fw;
+		BufferedWriter bw;
 		PrintWriter pw;
 		
 		try {
-			os = new FileOutputStream("files/produtos.csv");
-			osw = new OutputStreamWriter(os, StandardCharsets.UTF_8);
-			pw = new PrintWriter(osw, true);
+			fw = new FileWriter("files/produtos.csv", StandardCharsets.UTF_8, true);
+			bw = new BufferedWriter(fw);
+			pw = new PrintWriter(bw, true);
 			
-			for(Produto produto: produtos) {
-				pw.println(produto.getId() + "," + produto.getNome() + "," + produto.getValor());
-			}
+			pw.println(produto.getId() + "," + produto.getNome() + "," + produto.getValor());
 			
-			os.close();
-			osw.close();
+			fw.close();
+			bw.close();
 			pw.close();
 		}catch(IOException e) {
 			e.printStackTrace();
