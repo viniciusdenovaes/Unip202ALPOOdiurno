@@ -8,7 +8,7 @@ import view.janela_simples.JanelaSimples;
 public class TesteJanela {
 	
 	public static void main(String[] args) {
-		new Controller(new JanelaSimples(), new ModelCSV());
+		new Controller(new Janela(), new ModelCSV());
 	}
 
 }
