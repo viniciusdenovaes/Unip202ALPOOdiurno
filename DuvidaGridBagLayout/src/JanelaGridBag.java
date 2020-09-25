@@ -36,6 +36,13 @@ public class JanelaGridBag extends JFrame {
 		c.fill = GridBagConstraints.HORIZONTAL; 
 		add(new JButton("2, 0-2"), c);
 		
+		c = new GridBagConstraints();
+		c.gridx = 0;
+		c.gridy = 3;
+		c.gridwidth = 2;
+		c.anchor = GridBagConstraints.LINE_START; 
+		add(new JButton("3, 0-2"), c);
+		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		pack();
