@@ -74,16 +74,16 @@ public class DaoMySql implements Dao {
 		
 		try(	Connection con = DriverManager.getConnection(URL, USER, PASS); 
 				PreparedStatement pstm = con.prepareStatement(query);){
-			pstm.setString(1, key);
+			pstm.setString(1, "%"+key+"%");
 			ResultSet rs = pstm.executeQuery();
 			Editora editoraAntiga = null;
 			while(rs.next()) {
-				int idEditora = rs.getInt("id_publisher");
+				int idEditora = rs.getInt("publisher_id");
 				String nome = rs.getString("name");
 				String url = rs.getString("url");
 				
 				Editora editora = new Editora(idEditora, nome, url);
-				if(!editoraAntiga.equals(editora)) {
+				if( (editoraAntiga==null) || !editoraAntiga.equals(editora)) {
 					editoraAntiga = editora;
 					editoras.put(editora, new ArrayList<>());
 				}

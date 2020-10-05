@@ -17,7 +17,7 @@ public class TesteDaoMysql {
 //		for(Livro l: livros) {
 //			System.out.println(l);
 //		}
-		Map<Editora, Collection<Livro>> editoras = dao.getEditoras("s");
+		Map<Editora, Collection<Livro>> editoras = dao.getEditoras("so");
 		for(Editora e: editoras.keySet()) {
 			System.out.println(e);
 			Collection<Livro> livros = editoras.get(e);
