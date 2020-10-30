@@ -1,0 +1,20 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name = "entidade.Livro" table = "Books">
+      
+      <meta attribute = "class-description">
+         Estrutura de Livros 
+      </meta>
+      
+      <id name = "isbn" type = "string" column = "isbn">
+      </id>
+      
+      <property name = "titulo" column = "title" type = "string"/>
+      <property name = "preco" column = "price" type = "double"/>
+	  <many-to-one name = "editora" column = "publisher_id" class="entidade.Editora" not-null="true" lazy="false"/>      
+   </class>
+</hibernate-mapping>

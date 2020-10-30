@@ -1,0 +1,21 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name = "entidade.Editora" table = "Publishers">
+      
+      <meta attribute = "class-description">
+         Estrutura da Editora 
+      </meta>
+      
+      <id name = "id" type = "int" column = "publisher_id">
+         <generator class="native"/>
+      </id>
+      
+      <property name = "nome" column = "name" type = "string"/>
+      <property name = "url" column = "url" type = "string"/>
+      
+   </class>
+</hibernate-mapping>
